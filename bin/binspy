@@ -1,0 +1,40 @@
+#!/bin/bash
+
+printf '\033]2;BINSpy Console\a'
+
+#blue start 
+	BS="-e \033[1;34m"
+#color end
+	CE="\033[0m"
+#red start
+	RS="-e \033[1;31m"
+#green start
+	GNS="-e \033[1;32m"
+#white start
+  WHS="\033[0;97m"
+
+cd ~
+if [[ -d ~/BINSpy ]]
+then
+{
+cd ~/BINSpy
+} &> /dev/null
+python BINSpy.py $1 $2 $3 $4 $5 $6 $7 $8 $9
+else
+{
+ASESR="$( timeout -s SIGTERM 40 curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' )"
+} &> /dev/null
+if [[ "$ASESR" != "" ]]
+then 
+cd ~
+{
+git clone https://github.com/ALIF101XL/BINSpy.git
+cd ~/BINSpy && chmod 777 *
+} &> /dev/null
+python BINSpy.py $1 $2 $3 $4 $5 $6 $7 $8 $9
+else
+cd ~
+sleep 1
+exit
+fi
+fi

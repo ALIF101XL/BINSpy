@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>BINSpy : Login</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="apple-mobile-web-app-title" content="BINSpy">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="robots" content="noindex, nofollow"/>
+    <meta name="theme-color" content="#000" />
+    <meta name="google" value="notranslate"/>
+    <meta name="author" content="ALIF XAVIER LEOPARTA, @ALIF101XL"/>
+    <meta name="description" content="OSINT Research and analytics tool"/>
+
+    <!-- Styles & Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/styles/[FAVICON_HREF]">
+    <link rel="icon" type="image/x-icon" href="../static/img/favicon.png">
+    <link rel="stylesheet" href="../static/img/favicon.ico">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/libs.min.js"></script>
+    <script src="../static/js/base.js"></script>
+    <script src="../static/js/vscript.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+</head>
+
+<body class="BINSpyBody-Login">
+    <!-- home(BINSpyLogin) -->
+    <div class="BINSpyLogin">
+
+        <header class="BINSpyLogin-Header">
+            <div class="BINSpyLogin-Header--Box">
+                <img class="BINSpyLogin-Header--Box---logo" src="../static/img/logo.png" alt="BINSpy">
+                    <div>
+                        <h1 class="BINSpyLogin-Header--Box---nameBINSpy">BINSpy</h1>
+                    </div>
+            </div>
+        </header>
+
+        <section class="BINSpyLogin-Wrapper">
+            <p class="BINSpyLogin-Wrapper--description">Control panel</p>
+            <p class="BINSpyLogin-Wrapper--explanation">People tracker on the Internet</p>
+
+            <!-- home(keyIcorrect) -->
+            <div class="BINSpyLogin-IncorrectKey">
+                <div class="BINSpyLogin-IncorrectKey--Icon"><span class="icon-times"></span></div>
+                <div class="BINSpyLogin-IncorrectKey--Text">Hey the key is incorrect, try again.</div> 
+            </div>
+            <!-- end(keyIcorrect) -->
+
+            <!-- home(form) -->
+            <div class="BINSpyLogin-Wrapper--Form">
+                <form class="BINSpyLogin-Wrapper--Form---Body" method="POST">
+                    <label class="BINSpyLogin-Wrapper--iconLabel icon-lock2"></label>
+                    <input type="password" class="BINSpyLogin-Wrapper--Form---input" placeholder="Enter the Access key" id="dataKey" name="key" required="true">
+                    <div class="BINSpyLogin-Wrapper--Form---buttonRightDefine">
+                        <button type="submit" class="BINSpyLogin-Wrapper--Form---button"><span class="BINSpyLogin-Wrapper--Form---button----text">Sign In</span> <small class="icon-chevron-right"></small></button>
+                    </div>
+                </form>
+                <div class="BINSpyLogin-Wrapper--Form---text">
+                    <span class="BINSpyLogin-Wrapper--Form---line">-</span>  OSINT Research and analytics tool <span class="BINSpyLogin-Wrapper--Form---line">-</span>
+                </div>
+            </div>
+            <!-- end(form) -->
+
+
+            <!-- home(copyright) -->
+            <div class="BINSpyLogin-Footer">
+                <div class="BINSpyLogin-Footer--Version">
+                   <span class="BINSpyLogin-Footer--Version---name">stable</span> 
+                   <span class="BINSpyLogin-Footer--Version---number">v2.0</span> 
+                </div>
+                <div class="BINSpyLogin-Footer--Copyright">
+                    <i class="icon-copyright"></i> 2018 <a href="https://x.com/ALIF101XL" class="BINSpyLogin-Footer--Copyright---linkBoxug" title="Creator of BINSpy tool">ALIF XAVIER LEOPARTA</a>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+    <!-- end(BINSpyLogin) -->
+    <script src="../static/js/login.js"></script>
+</body>
+</html>
